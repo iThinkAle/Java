@@ -17,7 +17,7 @@ public class Main {
         Person.gender = 'M';
         System.out.println(Person.gender);
 
-        System.out.println(person1.surname); //anche se surname è stato modificato per person2, resta lo stesso dell'inizio per person1 e gli altri oggetti della classe
+        System.out.println(person1.surname); //anche se surname è stato modificato per person1, resta lo stesso dell'inizio per person2 e gli altri oggetti della classe
         System.out.println(person2.surname);
     }
 

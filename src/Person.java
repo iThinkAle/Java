@@ -6,11 +6,11 @@ public class Person {
     public String surname = "Ricordy"; //attributo dinamico
     public int age = 16;
     public static char gender = 'M'; //attributo statico
-    private String cf = "RCRLSN09B18H501A";
+    final private String cf = "RCRLSN09B18H501A";
 
     //costruttore
     public Person(int n){
-        if(n == 1){ //modifica alcuni attributi se n == 1
+        if(n == 1){ //modifica alcuni attributi se n == 1, ovvero per person1
             age += 1;
             gender = 'F'; //modifico gender per l'oggetto person1
             surname = "Ricordì"; //modifico surname per l'oggetto person1
