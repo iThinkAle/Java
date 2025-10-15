@@ -9,6 +9,7 @@ public class Main {
         System.out.println(person1.age);
         System.out.println(person2.age);
         System.out.println(person.getCf(123));
+        System.out.println(person.getCf(1234));
 
         //gender può essere solo richiamato con il nome della classe e non con quello degli oggetti, essendo statico
         System.out.println(Person.gender); //gender anche se dichiarato M è stato modificato in F per l'oggetto person1, quindi essendo statico sarà così per tutti gli altri oggetti della classe
