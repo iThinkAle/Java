@@ -1,9 +1,11 @@
+package example;
+
 public class Main {
 
     public static void main(String[] args) {
 
         Person person1 = new Person(1); //person1 triggera le modifiche agli attributi
-        Person person2 = new Person(2); //3 oggetti per la classe Person
+        Person person2 = new Person(2); //3 oggetti per la classe src.Person
         Person person = new Person(0);
 
         System.out.println(person1.age);

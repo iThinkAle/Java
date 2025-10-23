@@ -2,7 +2,7 @@ package src;
 
 import java.io.*;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
         BufferedReader tastiera = new BufferedReader(new InputStreamReader(System.in));
 
@@ -37,6 +37,7 @@ public class Main {
         for(int i = 0; i < j; i++){
             System.out.print(ris[i] + " ");
         }
+        System.out.println();
 
     }
 

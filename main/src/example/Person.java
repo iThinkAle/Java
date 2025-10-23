@@ -1,4 +1,4 @@
-import java.io.*;
+package example;
 
 public class Person {
     //attributi

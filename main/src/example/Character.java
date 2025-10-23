@@ -1,3 +1,5 @@
+package example;
+
 class Character extends Person{
 
     public Character(int n) {
