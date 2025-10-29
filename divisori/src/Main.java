@@ -17,13 +17,13 @@ class Main {
         }
 
         int[] ris = new int[n];
-        int j = 0;
+        int j = 0; //actual for cycle index for array value assignment
 
         for(int i = 1; i <= n; i++){
             float temp = n % i;
             if(temp == 0){
+                ris[j] = i;
                 j++;
-                ris[j-1] = i;
             }
         }
 
@@ -38,7 +38,5 @@ class Main {
             System.out.print(ris[i] + " ");
         }
         System.out.println();
-
     }
-
 }
