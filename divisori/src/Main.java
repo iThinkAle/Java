@@ -13,7 +13,7 @@ class Main {
 
         System.out.println("Inserisci un numero");
         try{
-            n = Integer.parseInt(tastiera.readLine());
+            n = Long.parseLong(tastiera.readLine());
         } catch (IOException | NumberFormatException e) {
             System.out.println("Inserisci numero valido");
             return;
