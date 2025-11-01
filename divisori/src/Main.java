@@ -68,7 +68,7 @@ class Main {
             System.out.print(divs.get(i) + " ");
         }
 
-        System.out.println();
+        System.out.println("\n");
 
         //to print elapsed time in nanoseconds, milliseconds and seconds
         System.out.println("Elapsed time: " + (end - start) + "ns");
