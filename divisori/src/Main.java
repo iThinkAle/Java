@@ -28,12 +28,15 @@ class Main {
 
         /*
           everything works more efficiently thanks to math property of divisors.
-          instead of doing one cycle to compute divisors from 1 to n (it would be much slower for bigger numbers), we divide the
-          computation into two cycles.
-          one cycle goes from 1 to sqrt(n). this works because every i divisor of n has a complementary divisor n/i, so to compute every divisor
-          we can go from 1 to only sqrt(n), since using that we can already get every divisor.
-          second cycle is optional. it goes from rad to n to compute divisors bigger than sqrt(n) and
-          backwards to add them to the dynamic array in crescent order.
+          every i divisor of n has a complementary divisor n/i, so to compute every divisor of n we can go from 1 to only sqrt(n).
+          this is very important to save computational power and time.
+
+          therefore, we can use only one cycle that goes from 1 to sqrt(n).
+          the only downside is that we would not have the divisors in crescent order, we would have to use a sorting algorithm.
+
+          the second cycle is optional and is used to fix the sorting problem that would generate with the first.
+          it computes divisors from sqrt(n) to n and adds them to the array in crescent order so it eliminates the
+          need of sorting the array.
          */
 
         //measures elapsed time
@@ -43,13 +46,18 @@ class Main {
         for(long i = 1; i <= rad; i++){
             if(n % i == 0){
                 divs.add(i);
+                System.out.println(i);
+                System.out.println(n/i);
             }
         }
 
-        //computes divisors for n from rad to n. reversed to add them to divs array in crescent order
+        System.out.println("--------------");
+
+        //computes divisors of n from rad to n. reversed to add them to divs array in crescent order
         for(long i = rad; i >= 1; i--){
             if(n % i == 0 && n/i != i){
                 divs.add(n/i);
+                System.out.println(n/i);
             }
         }
 
@@ -70,7 +78,7 @@ class Main {
 
         System.out.println("\n");
 
-        //to print elapsed time in nanoseconds, milliseconds and seconds
+        //prints elapsed time in nanoseconds, milliseconds and seconds
         System.out.println("Elapsed time: " + (end - start) + "ns");
         System.out.println("Elapsed time: " + ((end - start) / 1000000) + "ms");
         System.out.println("Elapsed time: " + ((end - start) / 1000000000) + "s");
