@@ -47,7 +47,6 @@ class Main {
             if(n % i == 0){
                 divs.add(i);
                 System.out.println(i);
-                System.out.println(n/i);
             }
         }
 
