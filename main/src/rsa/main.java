@@ -1,5 +1,7 @@
 package rsa;
 
+import java.math.BigInteger;
+
 public class main {
 /*
 * RSA è basato sull'elevata complessità computazionale della fattorizzazione in numeri primi. Il suo funzionamento base è il seguente:
@@ -19,4 +21,38 @@ public class main {
 *
 *
 * */
+    public static void main(String[] args) {
+        mathOps math = new mathOps();
+
+        long p = 5;
+        long q = 8;
+
+        long n;
+
+        n = p*q;
+        long phi = math.euler_totient(n);
+
+        long e;
+        //find such that is coprime with phi. it is required when computing d with the EEA, since the inverse modulo (d) of (ed mod phi) exists only when
+        // e and phi are coprimes.
+        for(e = 2; e < phi; e++) {
+            if(math.coprimes(e, phi)){
+                break;
+            }
+        }
+
+        long d;
+        //d is the modular inverse of e mod phi, so (e*d) mod phi = 1. d can undo what e does in encryption
+        for(d = 1; d <= phi; d++){
+            long ed = e*d;
+            if(math.modulo(ed, 1, phi)){
+                break;
+            }
+        }
+
+        System.out.println(phi);
+        System.out.println(n + " " + e);
+        System.out.println(n + " " + d);
+
+    }
 }

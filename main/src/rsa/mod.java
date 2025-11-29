@@ -1,37 +1,54 @@
 package rsa;
 
 public class mod {
-    public String mani() throws ArithmeticException{
+    public int a = 5;
+    public int m = 12;
 
-        int a = (int) (Math.random() * 100);
-        int b = (int) (Math.random() * 100);
-        int n = (int) (Math.random() * 100);
-
-        /*int a = 15;
-        int b = 3;
-        int n = 12;*/
+    public void congruenzaModulo(){
+        int a = 8;
+        int b = 2;
+        int n = 2;
 
         int x = a - b;
 
-        while(x % n != 0){
-            System.out.println(a);
-            System.out.println(b);
-            System.out.println(n);
-            a = (int) (Math.random() * 100);
-            b = (int) (Math.random() * 100);
-            n = (int) (Math.random() * 100);
-
-            x = a - b;
+        if(x == 0) {
+            throw new ArithmeticException();
         }
-        System.out.println(x + " " + n);
-        System.out.println(a + " congruo a " + b + " modulo " + n);
 
-        return a + " congruo a " + b + " modulo " + n;
+        if(x % n == 0){
+            System.out.println(x + " " + n);
+            System.out.println(a + " congruo a " + b + " modulo " + n);
+        }
+
     }
 
-    public static void main(String[] args) throws ArithmeticException {
-        mod main = new mod();
+    public int modulo(){
+        int mod = a % m;
 
-        main.mani();
+        return mod;
+    }
+
+    public int inverseModulo(){
+        //extended euclidean algorithm
+        int x;
+        for(x = 0; x < m; x++){
+            if((a*x) % m == 1){
+                break;
+            }
+        }
+        return x;
+    }
+
+
+    public static void main(String[] args) throws ArithmeticException {
+        mod mod = new mod();
+
+        //mod.congruenzaModulo();
+
+        System.out.println(mod.modulo());
+
+        System.out.println(mod.inverseModulo());
+
+
     }
 }
