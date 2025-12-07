@@ -10,7 +10,7 @@ public class mathOps {
                 divisors++;
             }
         }
-        return divisors <= 1;
+        return divisors <= 1;                           //return true if they share only one divisor (gcd(a,b) == 1). num and denomin of a reduced frac are coprime
     }
 
 
@@ -46,6 +46,6 @@ public class mathOps {
     public static void main(String[] args) {
         mathOps m = new mathOps();
 
-        System.out.println(m.coprimes(5, 12));
+        System.out.println(m.coprimes(4, 3));
     }
 }

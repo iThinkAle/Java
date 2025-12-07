@@ -29,7 +29,7 @@ public class main {
 
         long n;
 
-        n = p*q;
+        n = (p-1) * (q-1);
         long phi = math.euler_totient(n);
 
         long e;
